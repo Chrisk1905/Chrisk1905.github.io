@@ -11,6 +11,8 @@ import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './index.scss'
+import cv from "../../assets/GeolChrisKimResume-1.pdf"
+
 
 const About = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
@@ -38,13 +40,15 @@ const About = () => {
                     Software Engineering program, and pursuing my dream of a long and fruitful career in Software Engineering. 
                 </p>
                 <p>
-                    I'm a naturally curious and analytical person. I find my best quality to be my ability to listen to others.
-                    I enjoy meeting new people, Snowboarding, Jujitsu, 
-                    Stanley Kubrick films, and watching Tottenahm Hotspur, most of the time. 
+                    I'm a naturally curious and analytical person. I find my best quality to be my ability to listen and converse with others.
+                    I enjoy meeting new people, Jiujitsu, Snowboarding,  
+                    Stanley Kubrick films, and Tottenham Hotspur. 
                 </p>
                 <p>
                     I was born in Seoul, Korea, and reside in Redmond, Washington.
                 </p>
+
+                <a className='flat-button' href={cv}>My CV</a>
             </div>
 
             <div className='stage-cube-cont'>

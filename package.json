@@ -9,10 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.2",
-    "sass": "^1.58.3",
     "@emailjs/browser": "^3.10.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
@@ -22,9 +18,13 @@
     "@testing-library/user-event": "^13.5.0",
     "animate.css": "^4.1.1",
     "loaders.css": "^0.1.2",
-    "react-leaflet": "^4.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
     "react-loaders": "^3.0.1",
-    "react-scripts": "5.0.1"
+    "react-router-dom": "^6.8.2",
+    "react-scripts": "5.0.1",
+    "sass": "^1.58.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

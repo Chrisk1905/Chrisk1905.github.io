@@ -5,8 +5,7 @@ import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import 'leaflet/dist/leaflet.css'
-
-
+ 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const refForm = useRef()
@@ -45,8 +44,8 @@ const Contact = () => {
             />
           </h1>
           <p>
-            I have a formal education in Computer Science, and wokring experiece building
-            enterprise cloud, iOS, and frontend web applications.
+            I have a formal education in Computer Science, and working experiece in
+            enterprise cloud, iOS apps, and frontend web development.
             Send me any bussiness inquiries, or a witty prose. 
           </p>
           <div className="contact-form">
@@ -95,7 +94,7 @@ const Contact = () => {
         <div className="map-wrap">
           <MapContainer center={[47.6018, -122.2710]} zoom={11}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[47.6702, -122.1185]}>
+            <Marker position={[47.6702, -122.1185]} >
               <Popup>Chris lives here</Popup>
             </Marker>
           </MapContainer>

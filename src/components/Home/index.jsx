@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import LogoTitle from '../../assets/images/logo-c.png'
+import profile_pic from '../../assets/images/profile_pic.jpeg'
 import './index.scss'
 
 const Home = () => {
@@ -39,6 +40,9 @@ const Home = () => {
                 </h1>
                 <h2> Software Engineer / Web Developer / Computer Science Graduate  </h2>
                 <Link to="/contact" className='flat-button'>Contact Me</Link>
+            </div>
+            <div className='pic-zone'>
+                <img src={profile_pic} />
             </div>
         </div>
         <Loader type="pacman" />

@@ -49,6 +49,21 @@
             animation-delay: 1.4s;
         }
     }
+
+    .pic-zone{
+        position: absolute;
+        z-index: 0;
+        left: 60%;
+        top: 20%;
+        width: 50%;
+        max-height: 60%;
+        
+        img {
+            max-width: 60%;
+            border-radius: 20%;
+
+        }
+    }
 }
 
 h2 {
