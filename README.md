@@ -1,3 +1,3 @@
 # Chrisk1905.github.io
 
-A simple react and scss app, build using vite.
+Welcome to my portfolio website, a simple React and SCSS app, build using vite.
