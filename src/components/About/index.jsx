@@ -7,20 +7,22 @@ import {
   faJsSquare,
   faReact
 } from '@fortawesome/free-brands-svg-icons'
-import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './index.scss'
-import cv from "../../assets/GeolChrisKimResume-1.pdf"
-
+import cv from "../../assets/GeolChrisKimResume.pdf"
+import BarLoader from 'react-spinners/ScaleLoader'
 
 const About = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
-
+    const [showSpinner, setShowSpinner] = useState(true);
     useEffect(() => {
         setTimeout(() => {
           setLetterClass('text-animate-hover')
         }, 3000)
+        const timer = setTimeout(() => {
+            setShowSpinner(false);
+          }, 1000); // Adjust the time (in milliseconds) after which the spinner should disappear
       }, [])
 
     return (
@@ -37,18 +39,17 @@ const About = () => {
 
                 <p>
                     I'm a recent graduate of the University of Washington-Bothell's Computer Science and 
-                    Software Engineering program, and pursuing my dream of a long and fruitful career in Software Engineering. 
+                    Software Engineering program, and pursuing my dream of a long and fruitful career in Software Developement. 
                 </p>
                 <p>
-                    I'm a naturally curious and analytical person. I find my best quality to be my ability to listen and converse with others.
-                    I enjoy meeting new people, Jiujitsu, Snowboarding,  
-                    Stanley Kubrick films, and Tottenham Hotspur. 
+                    I'm a naturally curious and analytical person. I find my best qualities to be my patience, and ability to converse and learn from others.
+                    I enjoy meeting new people through technology, jiu jitsu, Snowboarding, films, and soccer. 
                 </p>
                 <p>
-                    I was born in Seoul, Korea, and reside in Redmond, Washington.
+                    I was born in Seoul, Korea and moved all around the USA before residing in Redmond, Washington.
                 </p>
 
-                <a className='flat-button' href={cv}>My CV</a>
+                <a className='flat-button' target="_blank" href={cv}>My CV</a>
             </div>
 
             <div className='stage-cube-cont'>
@@ -74,7 +75,9 @@ const About = () => {
                 </div>
             </div>
         </div>
-        <Loader type="pacman" />
+        <div className="spinner">
+            <BarLoader color="#e5e600" loading={showSpinner}/>
+        </div>
         </>
     )
 }

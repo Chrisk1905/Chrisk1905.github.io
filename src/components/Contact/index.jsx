@@ -1,19 +1,23 @@
 import { useEffect, useState, useRef } from 'react'
-import Loader from 'react-loaders'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer } from 'react-leaflet'
 import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import 'leaflet/dist/leaflet.css'
+import BarLoader from 'react-spinners/ScaleLoader'
  
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
+  const [showSpinner, setShowSpinner] = useState(true);
   const refForm = useRef()
 
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 3000)
+    setTimeout(() => {
+      setShowSpinner(false);
+    }, 1000); // Adjust the time (in milliseconds) after which the spinner should disappear
   }, [])
 
   const sendEmail = (e) => {
@@ -45,7 +49,7 @@ const Contact = () => {
           </h1>
           <p>
             I have a formal education in Computer Science, and working experiece in
-            enterprise cloud, iOS apps, and frontend web development.
+            enterprise cloud, iOS, and frontend web development.
             Send me any bussiness inquiries, or a witty prose. 
           </p>
           <div className="contact-form">
@@ -84,6 +88,11 @@ const Contact = () => {
             </form>
           </div>
         </div>
+        <div className="map-wrap">
+          <MapContainer center={[47.6018, -122.2710]} zoom={11}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          </MapContainer>
+        </div>
         <div className="info-map">
           Geol "Chris" Kim,
           <br />
@@ -91,16 +100,10 @@ const Contact = () => {
           <br />
           <span>Chrisk1905@gmail.com</span>
         </div>
-        <div className="map-wrap">
-          <MapContainer center={[47.6018, -122.2710]} zoom={11}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[47.6702, -122.1185]} >
-              <Popup>Chris lives here</Popup>
-            </Marker>
-          </MapContainer>
-        </div>
       </div>
-      <Loader type="pacman" />
+      <div className="spinner">
+            <BarLoader color="#e5e600" loading={showSpinner}/>
+        </div>
     </>
   )
 }
